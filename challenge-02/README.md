@@ -23,14 +23,15 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
 Onde VALOR é o novo valor da variável.
 */
 function mudaVar() {
-    return y  = 'VALOR' ;
+    y = 25;
+    return 'O valor da variável agora é' + 'y' ;
 }
 
 // Invoque a função criada acima.
 mudaVar();
 
 // Qual o retorno da função? (Use comentários de bloco).
-//'VALOR'
+/* O valor da variável agora é 25 */
 
 /*
 Crie uma função com as seguintes características:
@@ -42,9 +43,8 @@ Crie uma função com as seguintes características:
 function verify(x, y, z){
     if(x === undefined || y === undefined || z === undefined){
         return 'Preencha todos os valores corretamente!';
-    } else {
-        return (x * y * z) + '2';
-    }
+    } 
+    return (x * y * z) + 2;
 }
 
 // Invoque a função criada acima, passando só dois números como argumento.
@@ -54,10 +54,10 @@ veify(1,2)
 //'Preencha todos os valores corretamente!'
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
-verify(1,2,3)
+verify(2,3,4)
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-// '62'
+// 26
 
 /*
 Crie uma função com as seguintes características:
@@ -68,17 +68,13 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
-function verify(x, y, z){
+function treeArgs(x, y, z){
 
-    if( x !== undefined && y === undefined && z === undefined ||
-        y !== undefined && x === undefined && z === undefined ||
-        z !== undefined && x === undefined && y === undefined){
-
+    if( x !== undefined && y === undefined && z === undefined){
+    
         return x;
 
-    } else if ( x && y !== undefined && z === undefined ||
-                x && z !== undefined && y === undefined ||
-                y && z !== undefined && x === undefined){
+    } else if ( x !== unidefined && y !== undefined && z === undefined){
 
         return x + y;
         
@@ -91,14 +87,14 @@ function verify(x, y, z){
         return false;
 
     } else {
-        return 'null';
+        return null;
     }
 }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-verify(1); //1 
-verify(1,2); //3
-verify(1,2,3); //1
-verify();
+treeArgs(1); //1 
+treeArgs(1,2); //3
+treeArgs(1,2,3); //1
+treeArgs(); //false
 
 ```
