@@ -113,20 +113,17 @@ citado acima, no lugar de "pessoas".
 */
 carro.addPessoas = function(x) {
 
-    var lugaresNoCarro = (5 - carro.quantidadePessoas);
+    var lugaresNoCarro = (carro.assento - carro.quantidadePessoas);
+    var pluralOuSingular = lugaresNoCarro === 1 ? ' pessoa' : ' pessoas';
 
     if(carro.quantidadePessoas >= 5){
 
         return 'O carro já está lotado!' 
+    }
+    
+    if (carro.quantidadePessoas <= 5 && x > lugaresNoCarro){
 
-    } else if (carro.quantidadePessoas <= 5 && x > lugaresNoCarro){
-
-        if(lugaresNoCarro === 1){
-
-            return "Só cabem mais " + lugaresNoCarro + " pessoa!"
-        }
-
-        return "Só cabem mais " + lugaresNoCarro + " pessoas!"
+        return "Só cabem mais " + lugaresNoCarro + pluralOuSingular +  "!"
     }
 
     carro.quantidadePessoas += x;
