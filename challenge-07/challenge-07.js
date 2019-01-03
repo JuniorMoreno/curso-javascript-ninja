@@ -16,7 +16,7 @@ function addItem(values){
 Adicione um novo array ao array criado no início do desafio, com ao menos 3
 itens de tipos diferentes, mostrando o resultado no console.
 */
-addItem(['teste', true, 2]);
+console.log(addItem(['teste', true, 2]));
 
 /*
 Mostre no console o segundo elemento desse último array, criado acima, com a
@@ -41,27 +41,26 @@ console.log('O primeiro array tem ' + items[5].length + ' itens.');
 Utilizando a estrutura de repetição `while`, mostre no console todos os números
 pares entre 10 e 20, inclusive esses 2.
 */
-var x = 10;
-
 console.log( 'Números pares entre 10 e 20:');
 
-while(x <= 20){
-    x % 2 ? '' : console.log(x) ;
-    x++;
-};
+var x = 10;
 
+while(x <= 20){
+    x % 2 === 0 ? console.log(x) : '' ;
+    x++;
+}
 
 /*
 Na mesma ideia do exercício acima: mostre agora os números ímpares.
 */
-var x = 10;
-
 console.log( 'Números ímpares entre 10 e 20:' );
 
-while(x <= 20){
-    x % 2 ? console.log(x) : '';
+var x = 10;
+
+while(x < 20){
+    x % 2 !== 0 ? console.log(x) : '';
     x++;
-};
+}
 
 /*
 Repita os mesmos exercícios feitos acima, mas agora usando o loop "for".
@@ -71,15 +70,15 @@ Só vamos mudar o range:
 */
 console.log( 'Números pares entre 100 e 120:' );
 
-for(y = 100 ; y <=120; y++){
+for(y = 100 ; y <= 120; y++){
 
-    x % 2 ? '' : console.log(y) ;
+    x % 2 === 0 ? console.log(y) : '';
     x++;
 }
 
 console.log( 'Números ímpares entre 111 e 125:' );
 for(z = 111 ; z <=125; z++){
 
-    x % 2 ?  console.log(z) : '' ;
+    x % 2 !== 0 ? console.log(z) : '' ;
     x++;
 }
