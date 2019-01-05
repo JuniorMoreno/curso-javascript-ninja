@@ -54,12 +54,12 @@ vai efetuar. Será uma string com os valores `+`, `-`, `*`, `/` ou `%`;
   - Se o operador não for válido, retornar a frase:
   "Operação inválida."
 */
-function calculator(operation){
+function calculator(operator){
 
-    return function result(a,b){
+    return function (a,b){
         var value;
 
-        switch(operation){
+        switch(operator){
             case '+': 
                 value = a + b;
                 break;
@@ -79,7 +79,7 @@ function calculator(operation){
                 return 'Operação inválida.';
             }
 
-        return 'Resultado da operação: ' + a  + ' ' + operation + ' ' + b  + ' = ' + value + '.';
+        return 'Resultado da operação: ' + a  + ' ' + operator + ' ' + b  + ' = ' + value + '.';
     };
 
 }
