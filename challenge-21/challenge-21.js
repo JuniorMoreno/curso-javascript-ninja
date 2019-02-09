@@ -28,10 +28,10 @@ dado ao elemento HTML deve definir o que o elemento é ou o que ele faz.
     $stop.addEventListener('click', stopTimer, false);
     $reset.addEventListener('click', resetTimer, false);
 
-    function startTimer(){ 
+    function startTimer(){
 
         $timer.value = +$timer.value + 1;
-        interval = setTimeout(startTimer, 1000);          
+        interval = setTimeout(startTimer, 1000);
     }
 
     function stopTimer(){
