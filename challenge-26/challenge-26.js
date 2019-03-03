@@ -19,13 +19,40 @@ selecionados.
 Dica: olhe os erros que acontecem no console, e vá resolvendo um a um.
 Só passe para o próximo problema quando tiver resolvido o anterior :)
 */
-// ?
+(function (win, doc) {
+  'use strict';
 
-var $a = new DOM('[data-js="link"]');
-$a.on('click', function(e) {
-  e.preventDefault();
-  console.log('clicou');
-});
+  function DOM(elements) {
+    this.element = this.getDOMElements(elements);
 
-console.log('Elementos selecionados:', $a.get());
-console.log('$a é filho de body?', $a.get()[0].parentNode === document.body);
+  }
+
+  DOM.prototype.getDOMElements = function getDOMElements(elements){
+    return doc.querySelectorAll(elements);
+  }
+  DOM.prototype.on = function on(eventType, callback){
+    Array.prototype.forEach.call(this.element, function(element){
+      element.addEventlistener(eventType, callback, false);
+    });
+  };
+  DOM.prototype.off = function off(eventType, callback){
+    Array.prototype.forEach.call(this.element, function(element){
+      element.removeEventlistener(eventType, callback, false);
+    });
+  }
+  DOM.prototype.get = function get(){
+    return this.element;
+  }
+
+  var $a = new DOM('[data-js="link"]');
+  $a.on('click', function handleClick(e) {
+    e.preventDefault();
+    console.log('clicou');
+    $a.off('click', handleClick);
+  });
+
+  console.log('Elementos selecionados:', $a.get());
+  console.log('$a é filho de body?', $a.get()[0].parentNode === document.body);
+
+
+})(window, document);
